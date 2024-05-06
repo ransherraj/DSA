@@ -30,12 +30,12 @@ struct TrieNode{
         return wordEnd;
     }
     
-    // TrieNode(){
-    //     wordEnd = false;
-    //     for(int i = 0; i<26; i++){
-    //         childNode[i] = NULL;
-    //     }
-    // }
+    TrieNode(){
+        wordEnd = false;
+        for(int i = 0; i<26; i++){
+            childNode[i] = NULL;
+        }
+    }
 };
 
 class Trie{
@@ -78,8 +78,6 @@ class Trie{
         }
         return true;
     }
-    
-    
 };
 
 
@@ -114,14 +112,14 @@ void solve(){
         }
     }
     
-    cout<<"------------------$$$$$$$-----------------"<<endl;
+    cout<<"--->...........<---"<<endl;
     
     for(int i = 0; i<k; i++){
         if(obj.startWith(startWithWords[i])){
             cout<<"Start with word: " <<startWithWords[i]<<endl;
         }
         else{
-            cout<<"Does not start with word: " <<startWithWords[i]<<endl;
+            cout<<"Does not start with word: "<<startWithWords[i]<<endl;
         }
     } 
 }
@@ -142,20 +140,22 @@ Input :
 
 1
 5 4 4
-Raj Ruhan Ram Rakesh Ramesh
-Ramu Ram Ruhan Rashi
-Ra Rm Rt Ru
+Raj Ruhan Ram Rakesh Suhana
+Suhana Ram Ruhan Suatan
+Ra Rm Rt S
+
 
 Output:
 
-Ramu-> Not found
+Suhana -> Found
 Ram -> Found
 Ruhan -> Found
-Rashi-> Not found
-------------------$$$$$$$-----------------
+Suatan-> Not found
+--->...........<---
 Start with word: Ra
 Does not start with word: Rm
 Does not start with word: Rt
-Start with word: Ru
+Start with word: S
+
 
 */
