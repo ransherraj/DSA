@@ -177,7 +177,7 @@ void solve(){
                 //cout<<longest<<" ";
             }
             else if(words[i].size() == longest.size() && words[i] < longest){
-                cout<<longest<<" ";
+                //cout<<longest<<" ";
                 longest = words[i];
             }
         }
