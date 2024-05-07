@@ -82,18 +82,18 @@ struct TrieNode{
     bool flag = false;
     
     bool containChar(char ch){
-        if(childNode[ch-'A'] != NULL){
+        if(childNode[ch-'a'] != NULL){
             return true;
         }
         return false;
     }
     
     TrieNode* get(char ch){
-        return childNode[ch-'A'];
+        return childNode[ch-'a'];
     }
     
     void put(TrieNode* node, char ch){
-        childNode[ch-'A'] = node;
+        childNode[ch-'a'] = node;
     }
     
     void setFlagTrue(){
@@ -199,6 +199,8 @@ int main() {
 /* 
 
 Input :
+Testcase 1:
+
 1
 10
 R Raj Ra Ram Rajsher Raja Rajan Rama Ramaka Ramak
@@ -206,7 +208,20 @@ R Raj Ra Ram Rajsher Raja Rajan Rama Ramaka Ramak
 Output :
 Ramaka
 
+
+TestCase 2:
+3
+5
+ak szhkb a g hy 
+5
+vfjq kez vfj dotkr vfjqo 
+6
+n l i um ar xcfyc 
+
+output :
+ak
+None
+i
+
+
 */
-
-
-
