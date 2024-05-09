@@ -31,6 +31,10 @@ Binary Number ->   1    1    0    0     1
 
 */
 
+
+/*  APPROACH 1 */
+
+
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -52,6 +56,41 @@ void solve(){
 int main(){
     int t; cin>>t; while(t--)solve();
 }
+
+
+
+/* 
+
+APPROACH 2 
+***** Best One ****
+
+--How it works--
+Each time rightmost bit is erased and count is increased, till number equal to zero => leftmost bit erased
+
+*/
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+void solve(){
+    int a;
+    cin>>a;
+    int cnt = 0;
+    
+    while(a != 0){
+        a = a & (a-1);
+        cnt++;
+    }
+    
+    cout<<"Number of set bits : "<<cnt<<endl;
+    
+}
+
+int main(){
+    int t; cin>>t; while(t--)solve();
+}
+
 
 
 /*
