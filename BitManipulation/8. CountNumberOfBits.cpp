@@ -11,6 +11,8 @@ if( n & 1) => 'odd' else 'even'
 Divide by 2 : 
 n/2 = n>>1
 
+Example : In binary search we should use (low + high) >> 1
+
 Divide by 2 to power k : 
 n/(2^k) = n>>k
 
