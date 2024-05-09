@@ -2,6 +2,21 @@
 
 Find the single number when all other number number in array are duplicate except one
 
+
+======== Brute Force ======== :
+* take a map and keep number as key and count as value, while traversing in array
+* Traverse map and if count == 1 return number
+
+TC : N * log(size of map)
+SC : O(size of map)
+
+=========== Best Approach ==== :
+* XOR of two same numbers = 0
+* All duplicates will cancel out each other and only single number return at last.
+
+TC : O(N)
+SC : O(1)
+
 */
 
 #include <bits/stdc++.h>
