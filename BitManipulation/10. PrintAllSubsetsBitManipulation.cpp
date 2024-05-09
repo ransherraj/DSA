@@ -3,6 +3,9 @@
 Power Set : Using bit manipulation
 // Print all subsets
 
+TC : N * 2^N
+SC : ~ N * 2^N
+
 */
 
 #include <bits/stdc++.h>
