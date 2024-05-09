@@ -1,4 +1,12 @@
 #include <bits/stdc++.h>
+/*
+
+Binary Number ->   1    1    0    0     1
+          Bit ->  4th  3rd  2nd  1st   0th Bit
+
+*/
+
+
 using namespace std;
 
 void solve(){
@@ -8,8 +16,8 @@ void solve(){
     bool isSet2 = (a>>n) & 1;
     string ans1 = isSet1 ? "set." : "not set.";
     string ans2 = isSet2 ? "set." : "not set.";
-    cout<<"For number "<<a<<", "<<n+1<<"th bit is "<<ans1<<endl;
-    cout<<"For number "<<a<<", "<<n+1<<"th bit is "<<ans2<<endl;
+    cout<<"For number "<<a<<", "<<n<<"th bit is "<<ans1<<endl;
+    cout<<"For number "<<a<<", "<<n<<"th bit is "<<ans2<<endl;
 }
 
 int main(){
