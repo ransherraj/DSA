@@ -2,6 +2,8 @@
 
 Count Number of set bits
 
+In c++ stl : Can be used __builtin_popcount(n) to get count of set bits in n
+
 
 ******* Since Bitwise operators are faster than other operators, they are prefered in CP *******
 
