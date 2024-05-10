@@ -2,6 +2,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
+// Parameterised way , every time value is added to sum in parameter.
+
+/******** Parameterised way *****/
 void solve2(int n, int sum){
     
     if(n == 0) {
@@ -11,6 +15,15 @@ void solve2(int n, int sum){
     //cout<<n<<endl;
     solve2(n-1, sum + n);
     
+}
+
+// Functional Way, 
+int solve3(int n){
+    
+    if(n == 0) {
+        return 0;
+    }
+    return n + solve3(n-1);
 }
 
 void solve(){
