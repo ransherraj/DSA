@@ -2,6 +2,9 @@
 
 Factorial
 
+TC : O(N)
+SC : O(N)
+
 
 *****Best Approach****
 Self Explainatory
