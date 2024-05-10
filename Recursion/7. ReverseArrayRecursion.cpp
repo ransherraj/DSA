@@ -2,10 +2,11 @@
 
 Reverse Array using Recursion
 
-
 *****Best Approach****
 Self Explainatory
 
+Follow up Question 
+1) check if string is palindrome or not
 
 */
 
