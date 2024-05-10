@@ -39,11 +39,11 @@ void solve3(vector<int>arr, int i, int n, vector<int> &temp, vector<vector<int>>
         ans.push_back(temp);
         return;
     }
-    
+    //solve3(arr, i+1, n, temp, ans);   // To print with empty set on top
     temp.push_back(arr[i]);
     solve3(arr, i+1, n, temp, ans);
     temp.pop_back();
-    solve3(arr, i+1, n, temp, ans);
+    solve3(arr, i+1, n, temp, ans);   // remove this line and uncomment line 42 to get subsequence with empty set on top
     
 }
 
