@@ -1,8 +1,6 @@
 /*
 
-Merge Sort
-
-*****Best Approach****
+****** Merge Sort *****
 * split array low to mid in one part and mid+1 to high in other
 * Merge the array recurcively
 
@@ -11,76 +9,81 @@ Merge Sort
 #include <bits/stdc++.h>
 using namespace std;
 
-void merge(vector<int> &arr, int low, int mid, int high){
-    cout<<low << " "<<mid<< " " << high <<"*"<<endl;
-    vector<int>temp;
-    int left = low;
-    int right = mid+1;
+void merge(int start, int end, int mid, vector<int> &arr){
+    vector<int> temp(end - start + 1);
     
-    while(left <= mid && right <= high){
-        if(arr[left] <= arr[right]){
-            temp.push_back(arr[left]);
-            left++;
-        }
-        else{
-            temp.push_back(arr[right]);
-            right++;
+    int i = start;
+    int j = mid + 1;
+    int k = 0;
+    
+    while( i <= mid && j <= end){
+        if(arr[i] <= arr[j]){
+            temp[k++] = arr[i++];
+        }else{
+            temp[k++] = arr[j++];
         }
     }
-    
-    while(left <= mid){
-        temp.push_back(arr[left]);
+    while(i <= mid){
+        temp[k++] = arr[i++];
     }
-    while(right <= high){
-        temp.push_back(arr[right]);
+    while(j <= end){
+        temp[k++] = arr[j++];
     }
     
-    for(int i = low; i <= high; i++){
-        arr[i] = temp[i-low];
+    for(int i = 0; i<temp.size(); i++){
+        arr[start + i] = temp[i];
     }
 }
 
-void solve3(vector<int> &arr, int low, int high){
+void mSort(int start, int end, vector<int> &arr){
+    if(start >= end) return;
     
+    int mid = (start + end) / 2;
+    mSort(start, mid, arr);
+    mSort(mid+1, end, arr);
+    merge(start, end, mid, arr);
     
-    if(low == high) return;
-    int mid = (low + high)/2;
-    
-    solve3(arr, low, mid);
-    solve3(arr, mid+1, high);
-    cout<<low << " "<<mid<< " " << high<<endl;
-    merge(arr, low, mid, high);
 }
 
 void solve(){
     int n;
     cin>>n;
     vector<int> arr(n);
+    
     for(int i = 0; i<n; i++){
         cin>>arr[i];
     }
     
-    //cout<<n<<endl;
-    solve3(arr, 0, n-1);
+    mSort(0, n-1, arr);
     
-    for(auto x : arr){
-        cout<<x<<" ";
+    cout<<"Sorted Array"<<endl;
+    for(int i = 0; i<n; i++){
+        cout<<arr[i]<<" ";
     }
+    cout<<endl;
 }
 
-int main(){
-    int t; cin>>t; while(t--)solve();
+int main() { 
+    int t; 
+    cin>>t;
+    while(t--) {
+        solve();
+    }
+	return 0;
 }
 
 
-/*
+/* 
 
-Custom Input :
-2
-5
-1 2 4 3 1
+Input :
+1
+10
+6 4 10 4 2 7 9 2 1 8
 
-Output:
-Error
+Output :
+Sorted Array
+1 2 2 4 4 6 7 8 9 10 
+
+
 
 */
