@@ -1,5 +1,6 @@
 /*
-2302. Count Subarrays With Score Less Than K
+2302. Count Subarrays With Score Less Than K 
+*********************Refer to https://github.com/ransherraj/DSA/blob/main/SlidingWindow/Medium/713.%20Subarray%20Product%20Less%20Than%20K.cpp for better understanding *************
 The score of an array is defined as the product of its sum and its length.
 
 For example, the score of [1, 2, 3, 4, 5] is (1 + 2 + 3 + 4 + 5) * 5 = 75.
